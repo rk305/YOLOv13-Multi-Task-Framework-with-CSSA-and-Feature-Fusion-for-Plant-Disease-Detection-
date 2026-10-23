@@ -1,0 +1,26 @@
+# Model configuration
+model:
+  name: "resnet50" # Options: resnet34, resnet50, efficientnet_b0, convnext_tiny
+  pretrained: true
+  num_classes: 38
+
+# Dataset configuration
+data:
+  dataset_dir: "data/plant_village"
+  img_size: 224
+  batch_size: 32
+  num_workers: 4
+
+# Training hyperparameters
+training:
+  epochs: 30
+  lr: 0.0003
+  weight_decay: 0.0001
+  scheduler: "cosine" # Options: cosine, step, plateau
+  device: "cuda"
+
+# Checkpointing & output
+logging:
+  checkpoint_dir: "checkpoints"
+  output_dir: "outputs"
+  save_best_only: true
